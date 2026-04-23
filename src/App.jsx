@@ -69,7 +69,7 @@ const projects = [
   subtitle: "Graduation Project",
   desc: "3-axis CNC soldering system combining mechanical design and embedded control.",
   image: soldering,
-  tags: ["CNC", "Automation", "Arduino"],
+  tags: ["CNC", "Automation", "ArdAuino"],
   drive: "https://drive.google.com/drive/folders/1wSqETtDsSbqoUAJmEAveZAYMf3ReO6pH?usp=drive_link"
 },
   { 
