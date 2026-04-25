@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -12,8 +12,9 @@ import Services from "./pages/Services";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 
-
 export default function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
   useEffect(() => {
     const glow = document.querySelector(".mouse-glow");
 
@@ -46,8 +47,8 @@ export default function App() {
     <BrowserRouter>
       <div className="mouse-glow"></div>
 
-      <div className="min-h-screen bg-slate-950 text-white">
-        <Navbar />
+      <div className={darkMode ? "dark-theme" : "light-theme"}>
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
         <Routes>
           <Route path="/" element={<Home />} />
