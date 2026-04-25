@@ -159,27 +159,30 @@ const certificates = [
     image: "/certificates/itida.jpg",
     tags: ["Entrepreneurship", "Innovation", "Startup"],
   },
-  {
-    title: "Kaspersky Small Office Security",
-    issuer: "Kaspersky",
-    date: "Oct 2025",
-    image: "/certificates/kaspersky-ksos.pdf",
-    tags: ["Sales", "Cybersecurity", "Kaspersky"],
-  },
-  {
-    title: "Kaspersky Partner Onboarding Program",
-    issuer: "Kaspersky",
-    date: "Oct 2025",
-    image: "/certificates/kaspersky-onboarding.pdf",
-    tags: ["Partner", "Sales", "Security"],
-  },
-  {
-    title: "Kaspersky Endpoint Security for Business",
-    issuer: "Kaspersky",
-    date: "Oct 2025",
-    image: "/certificates/kaspersky-s02.pdf",
-    tags: ["Endpoint", "Business", "Security"],
-  },
+ {
+  title: "Kaspersky Small Office Security",
+  issuer: "Kaspersky",
+  date: "Oct 2025",
+  image: "/certificates/kaspersky-ksos.pdf",
+  preview: "/certificates/kaspersky-ksos.jpg",
+  tags: ["Sales", "Cybersecurity", "Kaspersky"],
+},
+{
+  title: "Kaspersky Partner Onboarding Program",
+  issuer: "Kaspersky",
+  date: "Oct 2025",
+  image: "/certificates/kaspersky-onboarding.pdf",
+  preview: "/certificates/kaspersky-onboarding.jpg",
+  tags: ["Partner", "Sales", "Security"],
+},
+{
+  title: "Kaspersky Endpoint Security for Business",
+  issuer: "Kaspersky",
+  date: "Oct 2025",
+  image: "/certificates/kaspersky-s02.pdf",
+  preview: "/certificates/kaspersky-s02.jpg",
+  tags: ["Endpoint", "Business", "Security"],
+},
   {
     title: "Kaspersky Next",
     issuer: "Kaspersky",
@@ -363,11 +366,11 @@ export default function Experience() {
                       </div>
                     </div>
                   ) : (
-                    <img
-                      src={cert.image}
-                      alt={cert.title}
-                      className="h-full w-full object-cover"
-                    />
+  <img
+    src={cert.preview || cert.image}
+    alt={cert.title}
+    className="h-full w-full object-cover"
+  />
                   )}
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition group-hover:opacity-100"></div>
@@ -394,26 +397,25 @@ export default function Experience() {
                     ))}
                   </div>
 
-                  <a
-                    href={cert.image}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    download={isPdf ? undefined : fileName}
-                    className="mt-6 inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 font-black text-slate-950 transition hover:bg-cyan-300 active:scale-95"
-                  >
-                    View Certificate
-                    <FaExternalLinkAlt />
-                  </a>
+  <a
+    href={cert.image}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 font-black text-slate-950 transition hover:bg-cyan-300 active:scale-95"
+  >
+    View Certificate
+    <FaExternalLinkAlt />
+  </a>
 
                   {isPdf && (
-                    <a
-                      href={cert.image}
-                      download={fileName}
-                      className="ml-3 mt-6 inline-flex items-center gap-2 rounded-xl border border-cyan-300 px-5 py-3 font-black text-cyan-200 transition hover:bg-cyan-400 hover:text-slate-950 active:scale-95"
-                    >
-                      Download
-                      <FaDownload />
-                    </a>
+  <a
+    href={cert.image}
+    download={cert.image.split("/").pop()}
+    className="inline-flex items-center gap-2 rounded-xl border border-cyan-300 px-5 py-3 font-black text-cyan-200 transition hover:bg-cyan-400 hover:text-slate-950 active:scale-95"
+  >
+    Download
+    <FaDownload />
+  </a>
                   )}
                 </div>
               </div>
