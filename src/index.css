@@ -15,3 +15,15 @@
   filter: blur(40px);
   z-index: 1;
 }
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.15);
+  }
+}
+
+.icon-float {
+  animation: floatIcon 1.8s ease-in-out infinite;
+}
