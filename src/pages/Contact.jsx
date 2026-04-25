@@ -79,10 +79,10 @@ const handleSubmit = (e) => {
               <FaEnvelope className="icon-float ml-1 inline text-sm text-pink-300" />
             </h3>
             <p className="mt-2 font-bold text-white">
-              mohammedgamall151@gmail.com
+              mohamedsaiiid1421973@gmail.com
             </p>
             <a
-              href="mailto:mohammedgamall151@gmail.com"
+              href="mailto:mohamedsaiiid1421973@gmail.com"
               className="mt-2 inline-flex items-center justify-center text-white hover:text-pink-300"
             >
               Message Me <FaExternalLinkAlt className="ml-1 text-xs" />
@@ -94,9 +94,9 @@ const handleSubmit = (e) => {
               Whatsapp{" "}
               <FaWhatsapp className="icon-float ml-1 inline text-sm text-green-400" />
             </h3>
-            <p className="mt-2 font-bold text-white">01152471947</p>
+            <p className="mt-2 font-bold text-white">01152371851</p>
             <a
-              href="https://wa.me/201152471947"
+              href="https://wa.me/201152371851"
               target="_blank"
               rel="noreferrer"
               className="mt-2 inline-flex items-center justify-center text-white hover:text-green-400"
