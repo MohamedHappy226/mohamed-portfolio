@@ -7,6 +7,7 @@ import {
   FaExternalLinkAlt,
 } from "react-icons/fa";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -24,42 +25,29 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+const handleSubmit = (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      const res = await fetch(
-        "https://mohamed-backend-portfolio-production.up.railway.app/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        alert(data.error || data.message || "Error ❌");
-        return;
-      }
-
+  emailjs
+    .send(
+      "service_y0q4u3a",
+      "template_meelbcq",
+      formData,
+      "uDAamNZ5h-PQkADHM"
+    )
+    .then(() => {
       alert("Message sent ✅");
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } catch (error) {
+      setFormData({ name: "", email: "", message: "" });
+    })
+    .catch((error) => {
       console.log(error);
-      alert("Server error ❌");
-    } finally {
+      alert("Error ❌");
+    })
+    .finally(() => {
       setLoading(false);
-    }
-  };
+    });
+};
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-16">
