@@ -343,14 +343,15 @@ export default function Experience() {
         {cert.image.split("/").pop()}
       </p>
 
-      <a
-        href={cert.image}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-5 rounded-full bg-cyan-400 px-8 py-3 font-black text-slate-950 transition hover:bg-cyan-300 active:scale-95"
-      >
-        Open Certificate
-      </a>
+<a
+  href={cert.image}
+  target="_blank"
+  rel="noopener noreferrer"
+  download={cert.image.split("/").pop()}
+  className="mt-5 rounded-full bg-cyan-400 px-8 py-3 font-black text-slate-950 transition hover:bg-cyan-300 active:scale-95"
+>
+  Download Certificate
+</a>
 
     </div>
   ) : (
@@ -384,15 +385,13 @@ export default function Experience() {
                   ))}
                 </div>
                 {!cert.image.endsWith(".pdf") && (
-  <a
-    href={cert.image}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-6 inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 font-black text-slate-950"
-  >
-    View Image
-    <FaExternalLinkAlt />
-  </a>
+<a
+  href={cert.image}
+  download
+  className="mt-5 rounded-full bg-cyan-400 px-8 py-3 font-black text-slate-950 transition hover:bg-cyan-300"
+>
+  Download Certificate
+</a>
 )}
               </div>
             </div>
