@@ -12,6 +12,7 @@ import {
   FaCar,
   FaHandshake,
   FaExternalLinkAlt,
+  FaDownload,
 } from "react-icons/fa";
 
 const timeline = [
@@ -158,8 +159,6 @@ const certificates = [
     image: "/certificates/itida.jpg",
     tags: ["Entrepreneurship", "Innovation", "Startup"],
   },
-
-  // PDF
   {
     title: "Kaspersky Small Office Security",
     issuer: "Kaspersky",
@@ -196,6 +195,7 @@ const certificates = [
     tags: ["Cloud", "Endpoint", "Security"],
   },
 ];
+
 function ExperienceCard({ item }) {
   return (
     <div className="group relative rounded-3xl border border-white/10 bg-white/5 p-7 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-3 hover:border-cyan-400/40 hover:shadow-cyan-500/20">
@@ -234,7 +234,10 @@ function ExperienceCard({ item }) {
 
         <div className="flex flex-wrap gap-2">
           {item.skills.map((skill) => (
-            <span key={skill} className="rounded-lg bg-slate-800 px-3 py-2 text-xs font-bold text-cyan-200">
+            <span
+              key={skill}
+              className="rounded-lg bg-slate-800 px-3 py-2 text-xs font-bold text-cyan-200"
+            >
               {skill}
             </span>
           ))}
@@ -258,12 +261,12 @@ function ExperienceCard({ item }) {
     </div>
   );
 }
+
 export default function Experience() {
   return (
     <main className="mx-auto max-w-7xl px-6 py-16">
-      {/* HEADER */}
       <div className="mb-20 text-center">
-        <h1 className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-pink-400 bg-clip-text text-3xl md:text-5xl font-black text-transparent">
+        <h1 className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-pink-400 bg-clip-text text-3xl font-black text-transparent md:text-5xl">
           Experience
         </h1>
 
@@ -274,48 +277,43 @@ export default function Experience() {
         </p>
       </div>
 
-      {/* TIMELINE */}
-<section className="relative mx-auto max-w-6xl">
-  <div className="absolute left-1/2 top-0 hidden h-full w-[3px] -translate-x-1/2 rounded-full bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500 md:block"></div>
+      <section className="relative mx-auto max-w-6xl">
+        <div className="absolute left-1/2 top-0 hidden h-full w-[3px] -translate-x-1/2 rounded-full bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500 md:block"></div>
 
-  <div className="space-y-20">
-    {timeline.map((item, index) => {
-      const isLeft = index % 2 === 0;
+        <div className="space-y-20">
+          {timeline.map((item, index) => {
+            const isLeft = index % 2 === 0;
 
-      return (
-        <div key={item.title} className="relative grid items-start md:grid-cols-2">
-          {/* DOT */}
-          <div className="absolute left-1/2 top-10 z-20 hidden h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-slate-950 shadow-xl md:flex">
-            <div className={`h-7 w-7 rounded-full ${item.badgeColor}`}></div>
-          </div>
+            return (
+              <div key={item.title} className="relative grid items-start md:grid-cols-2">
+                <div className="absolute left-1/2 top-10 z-20 hidden h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-slate-950 shadow-xl md:flex">
+                  <div className={`h-7 w-7 rounded-full ${item.badgeColor}`}></div>
+                </div>
 
-          {/* LEFT CARD */}
-          {isLeft ? (
-            <div className="md:pr-14">
-              <ExperienceCard item={item} />
-            </div>
-          ) : (
-            <div></div>
-          )}
+                {isLeft ? (
+                  <div className="md:pr-14">
+                    <ExperienceCard item={item} />
+                  </div>
+                ) : (
+                  <div></div>
+                )}
 
-          {/* RIGHT CARD */}
-          {!isLeft ? (
-            <div className="md:pl-14">
-              <ExperienceCard item={item} />
-            </div>
-          ) : (
-            <div></div>
-          )}
+                {!isLeft ? (
+                  <div className="md:pl-14">
+                    <ExperienceCard item={item} />
+                  </div>
+                ) : (
+                  <div></div>
+                )}
+              </div>
+            );
+          })}
         </div>
-      );
-    })}
-  </div>
-</section>
+      </section>
 
-      {/* CERTIFICATES */}
       <section className="mt-28">
         <div className="mb-14 text-center">
-          <h2 className="text-4xl font-black text-white">
+          <h2 className="text-3xl font-black text-white md:text-4xl">
             Certifications & Credentials
           </h2>
 
@@ -327,75 +325,100 @@ export default function Experience() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {certificates.map((cert) => (
-            <div
-              key={cert.title}
-              className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-3 hover:border-cyan-400/40 hover:shadow-cyan-500/20"
-            >
-              <div className="relative h-64 bg-slate-900">
+          {certificates.map((cert) => {
+            const isPdf = cert.image.toLowerCase().endsWith(".pdf");
+            const fileName = cert.image.split("/").pop();
 
-  {cert.image.endsWith(".pdf") ? (
-    <div className="flex h-full w-full flex-col items-center justify-center rounded-t-3xl bg-slate-800 text-center">
+            return (
+              <div
+                key={cert.title}
+                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-3 hover:border-cyan-400/40 hover:shadow-cyan-500/20"
+              >
+                <div className="relative h-64 bg-slate-900">
+                  {isPdf ? (
+                    <div className="flex h-full w-full flex-col items-center justify-center rounded-t-3xl bg-slate-800 text-center">
+                      <FaCertificate className="mb-4 text-5xl text-cyan-300 animate-pulse" />
 
-      <FaCertificate className="mb-4 text-5xl text-cyan-300 animate-pulse" />
+                      <p className="px-4 text-sm font-bold text-slate-300">
+                        {fileName}
+                      </p>
 
-      <p className="px-4 text-sm font-bold text-slate-300">
-        {cert.image.split("/").pop()}
-      </p>
+                      <div className="mt-5 flex flex-wrap justify-center gap-3">
+                        <a
+                          href={cert.image}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full bg-cyan-400 px-6 py-3 font-black text-slate-950 transition hover:bg-cyan-300 active:scale-95"
+                        >
+                          Open
+                        </a>
 
-<a
-  href={cert.image}
-  target="_blank"
-  rel="noopener noreferrer"
-  download={cert.image.split("/").pop()}
-  className="mt-5 rounded-full bg-cyan-400 px-8 py-3 font-black text-slate-950 transition hover:bg-cyan-300 active:scale-95"
->
-  Download Certificate
-</a>
+                        <a
+                          href={cert.image}
+                          download={fileName}
+                          className="rounded-full border border-cyan-300 px-6 py-3 font-black text-cyan-200 transition hover:bg-cyan-400 hover:text-slate-950 active:scale-95"
+                        >
+                          Download
+                        </a>
+                      </div>
+                    </div>
+                  ) : (
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="h-full w-full object-cover"
+                    />
+                  )}
 
-    </div>
-  ) : (
-    <img
-      src={cert.image}
-      alt={cert.title}
-      className="h-full w-full object-cover"
-    />
-  )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition group-hover:opacity-100"></div>
-              </div>
-
-              <div className="p-6">
-                <h3 className="text-xl font-black text-white">
-                  {cert.title}
-                </h3>
-
-                <div className="mt-4 space-y-2 text-sm font-bold text-slate-400">
-                  <p>🏢 {cert.issuer}</p>
-                  <p>📅 {cert.date}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition group-hover:opacity-100"></div>
                 </div>
 
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {cert.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-slate-800 px-3 py-1 text-xs font-bold text-cyan-200"
+                <div className="p-6">
+                  <h3 className="text-xl font-black text-white">
+                    {cert.title}
+                  </h3>
+
+                  <div className="mt-4 space-y-2 text-sm font-bold text-slate-400">
+                    <p>🏢 {cert.issuer}</p>
+                    <p>📅 {cert.date}</p>
+                  </div>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {cert.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-slate-800 px-3 py-1 text-xs font-bold text-cyan-200"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={cert.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download={isPdf ? undefined : fileName}
+                    className="mt-6 inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 font-black text-slate-950 transition hover:bg-cyan-300 active:scale-95"
+                  >
+                    View Certificate
+                    <FaExternalLinkAlt />
+                  </a>
+
+                  {isPdf && (
+                    <a
+                      href={cert.image}
+                      download={fileName}
+                      className="ml-3 mt-6 inline-flex items-center gap-2 rounded-xl border border-cyan-300 px-5 py-3 font-black text-cyan-200 transition hover:bg-cyan-400 hover:text-slate-950 active:scale-95"
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      Download
+                      <FaDownload />
+                    </a>
+                  )}
                 </div>
-                {!cert.image.endsWith(".pdf") && (
-<a
-  href={cert.image}
-  download
-  className="mt-5 rounded-full bg-cyan-400 px-8 py-3 font-black text-slate-950 transition hover:bg-cyan-300"
->
-  Download Certificate
-</a>
-)}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </main>
