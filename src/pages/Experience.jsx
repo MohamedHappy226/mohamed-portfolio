@@ -263,7 +263,7 @@ export default function Experience() {
     <main className="mx-auto max-w-7xl px-6 py-16">
       {/* HEADER */}
       <div className="mb-20 text-center">
-        <h1 className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-pink-400 bg-clip-text text-5xl font-black text-transparent">
+        <h1 className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-pink-400 bg-clip-text text-3xl md:text-5xl font-black text-transparent">
           Experience
         </h1>
 
@@ -326,7 +326,7 @@ export default function Experience() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {certificates.map((cert) => (
             <div
               key={cert.title}

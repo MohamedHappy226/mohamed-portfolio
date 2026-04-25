@@ -52,11 +52,11 @@ const handleSubmit = (e) => {
   return (
     <main className="mx-auto max-w-7xl px-6 py-16">
       <div className="mb-28 text-center">
-        <h1 className="text-5xl font-black text-white">Get in Touch</h1>
+        <h1 className="text-3xl md:text-5xl font-black text-white">Get in Touch</h1>
         <div className="mx-auto mt-3 h-[4px] w-20 rounded-full bg-cyan-400"></div>
       </div>
 
-      <div className="mx-auto grid max-w-6xl items-start gap-20 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-10 lg:grid-cols-2">
         {/* LEFT */}
         <div className="mx-auto w-full max-w-md space-y-6">
           <div className="rounded-2xl border border-white/20 bg-white/5 p-7 text-center transition duration-500 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-500/20">

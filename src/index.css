@@ -27,3 +27,39 @@
 .icon-float {
   animation: floatIcon 1.8s ease-in-out infinite;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  h1 {
+    font-size: 34px !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+  }
+
+  nav {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  iframe,
+  img {
+    max-width: 100%;
+  }
+}
