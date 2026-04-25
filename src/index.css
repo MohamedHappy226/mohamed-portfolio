@@ -1,1 +1,17 @@
 @import "tailwindcss";
+.mouse-glow {
+  position: fixed;
+  width: 450px;
+  height: 450px;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12),
+    rgba(34, 211, 238, 0.06),
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+  z-index: 1;
+}
