@@ -63,3 +63,19 @@ body {
     max-width: 100%;
   }
 }
+::-webkit-scrollbar {
+  display: none;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+nav div::-webkit-scrollbar {
+  display: none;
+}
+
+nav div {
+  scrollbar-width: none;
+}
