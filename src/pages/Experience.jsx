@@ -333,20 +333,28 @@ export default function Experience() {
               className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-3 hover:border-cyan-400/40 hover:shadow-cyan-500/20"
             >
               <div className="relative h-64 bg-slate-900">
-                {cert.image.endsWith(".pdf") ? (
-                  <iframe
-                    src={cert.image}
-                    title={cert.title}
-                    className="h-full w-full rounded-t-3xl bg-white"
-                  ></iframe>
-                ) : (
-                  <img
-                    src={cert.image}
-                    alt={cert.title}
-                    className="h-full w-full object-cover"
-                  />
-                )}
-
+{cert.image.endsWith(".pdf") ? (
+  <div className="flex h-full w-full flex-col items-center justify-center rounded-t-3xl bg-slate-800 text-center">
+    <FaCertificate className="mb-4 text-5xl text-cyan-300" />
+    <p className="px-4 text-sm font-bold text-slate-300">
+      {cert.image.split("/").pop()}
+    </p>
+    <a
+      href={cert.image}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-5 rounded-full bg-cyan-400 px-8 py-3 font-black text-slate-950 transition hover:bg-cyan-300"
+    >
+      Open
+    </a>
+  </div>
+) : (
+  <img
+    src={cert.image}
+    alt={cert.title}
+    className="h-full w-full object-cover"
+  />
+)}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition group-hover:opacity-100"></div>
               </div>
 
