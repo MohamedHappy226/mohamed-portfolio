@@ -17,7 +17,7 @@ export default function About() {
 
       {/* TITLE */}
       <div className="mb-12 text-center">
-        <h1 className="text-5xl font-black tracking-wide bg-gradient-to-r from-cyan-300 via-emerald-300 to-pink-400 bg-clip-text text-transparent">
+        <h1 className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-pink-400 bg-clip-text text-3xl font-black tracking-wide text-transparent sm:text-4xl lg:text-5xl">
           About Me
         </h1>
 
@@ -29,17 +29,17 @@ export default function About() {
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="rounded-3xl bg-white/10 p-8 shadow-2xl backdrop-blur-md"
+        className="rounded-3xl bg-white/10 p-5 shadow-2xl backdrop-blur-md sm:p-6 md:p-8"
       >
 
         {/* NAME + ROLE */}
         <div className="mb-6">
 
-          <h2 className="text-3xl font-black bg-gradient-to-r from-cyan-300 via-emerald-300 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="break-words bg-gradient-to-r from-cyan-300 via-emerald-300 to-pink-400 bg-clip-text text-2xl font-black text-transparent sm:text-3xl">
             Mohamed Saeed Ibrahim Ibrahim Attia
           </h2>
 
-          <div className="mt-2 flex items-center gap-2 text-lg text-slate-400">
+          <div className="mt-2 flex flex-wrap items-center gap-2 text-base text-slate-400 sm:text-lg">
             <span className="text-cyan-300">&lt;/&gt;</span>
 
             <span className="font-bold text-slate-200">
@@ -61,7 +61,7 @@ export default function About() {
         </div>
 
         {/* ABOUT TEXT */}
-<p className="text-slate-300 leading-8">
+<p className="text-slate-300 leading-7 sm:leading-8 text-sm sm:text-base">
   I am a Mechatronics Engineering student with strong hands-on experience in
   <span className="mx-1 font-bold text-cyan-300">Embedded Systems</span>,
   <span className="mx-1 font-bold text-cyan-300">Automation</span>, and

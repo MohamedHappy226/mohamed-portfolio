@@ -7,7 +7,7 @@ import TypingTitle from "../components/TypingTitle";
 
 export default function Home() {
   return (
-    <main className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl grid-cols-1 items-center gap-12 px-8 py-16 lg:grid-cols-2">
+    <main className="mx-auto grid min-h-[calc(100vh-80px)] w-full max-w-7xl grid-cols-1 items-center gap-8 px-4 py-10 sm:px-6 md:gap-10 lg:grid-cols-2 lg:px-8 lg:py-16">
 
       {/* LEFT */}
       <motion.section
@@ -20,7 +20,7 @@ transition={{ duration: 1, ease: "easeOut" }}
           👋 Welcome to my portfolio
         </div>
 
-        <h1 className="mb-4 text-6xl font-black italic leading-tight tracking-wide">
+        <h1 className="mb-4 text-4xl font-black italic leading-tight tracking-wide sm:text-5xl lg:text-6xl">
           <span className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-pink-400 bg-clip-text text-transparent">
             Mohamed Saied
           </span>
@@ -140,7 +140,7 @@ transition={{ duration: 1 }}
   alt="profile"
   whileHover={{ scale: 1.1, rotate: 2 }}
   transition={{ type: "spring", stiffness: 200 }}
-  className="relative h-[420px] w-[420px] rounded-full border-[10px] border-white/10 object-cover shadow-2xl"
+  className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[420px] lg:h-[420px] rounded-full border-[8px] sm:border-[10px] border-white/10 object-cover shadow-2xl"
 />
 
           {/* Floating icons */}

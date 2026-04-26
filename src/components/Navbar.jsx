@@ -17,8 +17,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
-        <h1 className="text-3xl font-black italic tracking-wide text-white sm:text-4xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <h1 className="text-2xl font-black italic tracking-wide text-white sm:text-3xl">
           Mohamed
         </h1>
 
