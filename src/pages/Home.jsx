@@ -17,7 +17,7 @@ export default function Home() {
   const skills = ["Arduino", "PLC", "Robotics", "IoT", "SolidWorks", "C++"];
 
   return (
-    <main className="mx-auto grid min-h-[calc(100vh-80px)] w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-16">
+   <main className="mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-7xl flex-col-reverse items-center gap-10 px-4 py-6 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8 lg:py-16">
       <motion.section
         initial={{ opacity: 0, x: -80 }}
         whileInView={{ opacity: 1, x: 0 }}
