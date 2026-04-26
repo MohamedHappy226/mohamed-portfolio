@@ -33,10 +33,10 @@ transition={{ duration: 1, ease: "easeOut" }}
   <TypingTitle />
 </motion.div>
         {/* TEXT BOX */}
-        <div className="mb-8 max-w-2xl rounded-3xl border-l-4 border-cyan-400 bg-slate-900/80 p-7 shadow-2xl backdrop-blur-md">
+        <div className="mb-8 w-full max-w-full overflow-hidden rounded-3xl border-l-4 border-cyan-400 bg-slate-900/80 p-4 shadow-2xl backdrop-blur-md sm:p-7">
 <p className="mt-4 text-slate-300 leading-8">
   I am a Mechatronics Engineering student with hands-on experience in{" "}
-  <span className="mx-1 inline-block rounded-lg bg-cyan-400/10 border border-cyan-400/20 px-2 py-1 font-bold text-cyan-200">
+  <span className="my-1 inline-block max-w-full break-words rounded-lg border border-cyan-400/20 bg-cyan-400/10 px-2 py-1 text-sm font-bold text-cyan-200 sm:text-base">
     Embedded Systems
   </span>
   ,{" "}
